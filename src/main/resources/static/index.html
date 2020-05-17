@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<title>Chat application </title>
+	<link rel="stylesheet" href="/css/styles.css" />
+	<link rel="stylesheet" href="/css/menu.css" />
+	<link rel="stylesheet" href="/css/emojis.css" />
+</head>
+<body>
+<div class="menubar" id="menubar">
+	<a href="index.html" class="active">Home</a>
+	<a href="rules.html">Rules</a>
+	<a href="javascript:void(0);" class="icon" onclick="menuBar()">
+		&#9776;
+	</a>
+</div>
+
+<noscript>
+	<h2>Sorry! Your browser doesn't support Javascript</h2>
+</noscript>
+
+<div id="username-page">
+	<div class="username-page-container">
+		<div class="entrncknm">
+			<strong>#ChannelName</strong>
+		</div>
+		<form id="usernameForm" name="usernameForm">
+			<div class="form-group">
+				<input type="text" id="name" placeholder="Type your nickname.."
+					   autocomplete="off" class="form-control" />
+			</div>
+			<div class="form-group">
+				<button type="submit" class="pillbutton">Entry</button>
+			</div>
+		</form>
+	</div>
+</div>
+<div id="chat-page" class="hidden">
+	<div class="chat-container">
+		<div class="alert">
+			Please keep the <strong>good</strong> tone, thanks.
+			<!-- emojis start-->
+			<button id="emojibutton">Emoji</button>
+			<h>
+				<br>
+				<button id="smiley" onclick="getEmojiSmile()" value="&#x1F600">&#x1F600</button>
+				<button id="laughing" onclick="getEmojiLaughing()" value="&#x1F602">&#x1F602</button>
+				<button id="cry" onclick="getEmojiCry()" value="&#x1F622">&#x1F622</button>
+				<button id="love" onclick="getEmojiLove()" value="&#x2764">&#x2764</button>
+				<button id="hamb" onclick="getEmojiHamb()" value="&#x1F354">&#x1F354</button>
+				<br>
+			</h>
+			<!-- emojis end-->
+		</div>
+		<div class="loading">Loading</div>
+		<ul id="messageArea">
+
+		</ul>
+		<form id="messageForm" name="messageForm" nameForm="messageForm">
+			<div class="form-group">
+				<div class="input-group clearfix">
+					<input type="text" id="message" placeholder="Type a message..."
+						   autocomplete="off" class="form-control"/>
+					<button type="submit" class="pillbutton">Send</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="/js/emojis.js"></script>
+		<script src="/js/scripts.js"></script>
+</body>
+</html>
